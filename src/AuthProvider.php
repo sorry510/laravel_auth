@@ -12,7 +12,7 @@ use Sorry510\Commands\Swagger;
  *
  * @Author sorry510 491559675@qq.com
  */
-class PermissionProvider extends ServiceProvider
+class AuthProvider extends ServiceProvider
 {
     /**
      * Register services.
