@@ -1,0 +1,7 @@
+<?php
+
+Route::middleware(['auth:sanctum', 'permission'])->prefix('prefix')->namespace('Namespace')->group(function () {
+   
+});
+
+Route::get('route', 'DemoController@demo')->setPermission('permission')->setDesc('desc');

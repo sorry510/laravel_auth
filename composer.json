@@ -1,0 +1,42 @@
+{
+    "name": "sorry510/auth",
+    "description": "laravel auth",
+    "keywords": ["laravel", "auth"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sorry510",
+            "email": "491559675@qq.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "laravel/framework": "^8.0",
+        "laravel/sanctum": "^2.9",
+        "myclabs/deep-copy": "^1.10",
+        "spatie/laravel-permission": "^4.0",
+        "sorry510/annotation": "dev-master",
+        "sorry510/constant": "dev-master"
+    },
+    "require-dev": {
+        "zircote/swagger-php": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sorry510\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sorry510\\AuthProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
