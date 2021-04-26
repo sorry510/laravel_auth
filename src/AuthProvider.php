@@ -45,9 +45,9 @@ class AuthProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            // $this->registerCommands(); // 不注册 migrate
+            $this->registerCommands();
             $this->publishConfig();
-            $this->registerMigrations();
+            $this->registerMigrations(); // 不注册 migrate
         }
         $this->injectMethod(); // 注入自定义的方法
     }
