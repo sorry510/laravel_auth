@@ -26,7 +26,7 @@ class RouteAst extends Command
      * @var string
      */
     protected $signature = 'route:sync {module : 模块名称}
-        {--f|filename=v1.php : 路由文件名称}
+        {--f|filename=api.php : 路由文件名称}
         {--auto|auto=0 : 是否自动确认}';
 
     /**
@@ -90,6 +90,7 @@ class RouteAst extends Command
                     [$result, $value] = $this->checkRouter($data, $module);
                     if ($result) {
                         $hasRouter = $result;
+                        // 找到对应分组，重写路由
                         $this->addRouters($value);
                         break;
                     }
@@ -97,6 +98,7 @@ class RouteAst extends Command
             }
         }
         if (!$hasRouter) {
+            // 设置一个新的分组
             $asts[] = $this->setRouteGroup();
         }
 

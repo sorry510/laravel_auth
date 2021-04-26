@@ -8,8 +8,7 @@ use Sorry510\Commands\RouteAst;
 use Sorry510\Commands\Swagger;
 
 /**
- * 权限相关
- *
+ * 权限服务
  * @Author sorry510 491559675@qq.com
  */
 class AuthProvider extends ServiceProvider
@@ -46,7 +45,7 @@ class AuthProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->registerCommands();
+            // $this->registerCommands(); // 不注册 migrate
             $this->publishConfig();
             $this->registerMigrations();
         }
