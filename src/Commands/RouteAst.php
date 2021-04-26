@@ -240,7 +240,7 @@ class RouteAst extends Command
                 $array = explode('\\', $operationId);
                 $action = $array[count($array) - 1];
                 $res['method'] = $method;
-                $res['uri'] = $key[1];
+                $res['uri'] = count($key) === 2 ? end($key) : '';
                 $res['action'] = $action;
                 if (array_key_exists('permission', $val1)) {
                     $permission = $val1['permission'];
