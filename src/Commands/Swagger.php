@@ -15,8 +15,7 @@ class Swagger extends Command
         {--o|outpath=./public : 生成文件路径}
         {--f|filename=openapi.json : 生成文件名称}
         {--format=json : 文件类型（yaml或json）}
-        {--r|route=0 : 是否同步路由文件}
-        {--rf|routeFilename=api.php : 路由文件名称}';
+        {--rf|routeFilename="" : 同步的路由文件名称}';
 
     /**
      * The console command description.
@@ -46,11 +45,10 @@ class Swagger extends Command
         $outpath = trim($this->option('outpath'));
         $filename = trim($this->option('filename'));
         $format = trim($this->option('format'));
-        $route = trim($this->option('route'));
         $routeFilename = trim($this->option('routeFilename'));
         echo exec("php ./vendor/zircote/swagger-php/bin/openapi ./swaggerInfo.php ./app/Http/Controllers/{$module} -o {$outpath}/{$filename} --format {$format}");
         $this->info('swagger openapi.json completed successfully');
-        if ($route) {
+        if (!empty($routeFilename)) {
             $this->call('route:sync', [
                 'module' => $module,
                 '--auto' => 1,
