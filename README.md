@@ -51,7 +51,7 @@ class Kernel extends HttpKernel
 
 ```
 php artisan swagger 模块名称 // 生成swagger接口文档
-php artisan swagger 模块名称 -r 1 // 生成swagger接口文档，同时同步生成路由文件
+php artisan swagger 模块名称 -r api.php // 生成swagger接口文档，同时同步生成路由文件
 php artisan route:sync // 根据 openapi.json 对路由文件同步更新
 php artisan route:permission // 根据路由文件同步权限列表
 ```

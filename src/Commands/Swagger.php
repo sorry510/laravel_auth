@@ -15,7 +15,7 @@ class Swagger extends Command
         {--o|outpath=./public : 生成文件路径}
         {--f|filename=openapi.json : 生成文件名称}
         {--format=json : 文件类型（yaml或json）}
-        {--rf|routeFilename="" : 同步的路由文件名称}';
+        {--r|routeFilename= : 路由文件名称}';
 
     /**
      * The console command description.
@@ -52,7 +52,7 @@ class Swagger extends Command
             $this->call('route:sync', [
                 'module' => $module,
                 '--auto' => 1,
-                '--f' => $routeFilename,
+                '--filename' => $routeFilename,
             ]);
         }
     }
