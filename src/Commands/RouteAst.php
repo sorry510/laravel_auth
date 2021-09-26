@@ -217,7 +217,7 @@ class RouteAst extends Command
     {
 
         if (!file_exists(public_path('openapi.json'))) {
-            $this->error('openapi.json not find');
+            $this->error('openapi.json not find in public dir');
             die;
         }
         $json_string = file_get_contents(public_path('openapi.json'));
